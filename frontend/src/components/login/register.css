@@ -1,0 +1,43 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.register-form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+input {
+  display: block;
+  width: 100%;  
+  margin: 10px auto; /* Thêm margin auto để căn giữa */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px; /* Thêm padding để input trông đẹp hơn */
+  box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước của input */
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff
+}

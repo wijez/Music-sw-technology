@@ -1,0 +1,83 @@
+.Follow-Button {
+    position: relative;
+    width: 135px;
+    padding: 0 32px;
+    height: 32px;
+    border-radius: 5px;
+    border: 0;
+    background: var(--button-follow);
+}
+
+.Follow-Button:hover {
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+.Follow-Button span {
+    margin-left: 8px;
+}
+
+.Feedback {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    transition: 0.6s;
+    font-size: 2px;
+    color: transparent;
+    border: 0;
+    outline: none !important;
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+}
+
+.Follow-Button.Press {
+    animation: size 0.4s;
+    color: #fd2d47;
+}
+
+.Feedback.Press {
+    bottom: 40px;
+    font-size: 20px;
+    visibility: visible;
+    animation: fade 1s;
+}
+
+.Track-Card {
+    position: absolute;
+    right: 20px;
+}
+
+.Heart {
+    cursor: pointer;
+}
+
+.isFollow {
+    font-weight: 700;
+    color: #fd2d47;
+}
+
+@keyframes fade {
+    0% {
+        color: transparent;
+    }
+    50% {
+        color: #fd2d47;
+    }
+    100% {
+        color: transparent;
+    }
+}
+
+@keyframes size {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(8px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

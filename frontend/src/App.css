@@ -1,0 +1,18 @@
+/* src/App.css */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Dùng justify-content: center để căn giữa nội dung */
+  background-color: #FFFBF5;
+  padding: 20px;
+  height: 100vh; /* Thiết lập chiều cao bằng 100% của viewport height */
+  width: 100vw; /* Thiết lập chiều rộng bằng 100% của viewport width */
+  color: gray;
+}
+h1 {
+  font-size: 2.5em;
+  color: #61dafb;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}

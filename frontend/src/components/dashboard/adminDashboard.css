@@ -1,0 +1,23 @@
+.admin-dashboard {
+  width: max-content;
+  padding: 20px;
+  text-align: center;
+}
+.body {
+  display: block;
+}
+.song-management {
+
+  text-align: left;
+}
+
+.song-management ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.song-management li {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}

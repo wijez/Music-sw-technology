@@ -1,0 +1,42 @@
+/* form {
+  background-color: #FFFBF5;
+  display: flex;
+}
+
+.search-container {
+  justify-items: center;
+  border-radius: 10px;
+}
+
+ul {
+  position: absolute ;
+  margin: 20px; 
+  padding: 10px;
+  list-style-type: none; 
+  border: none; 
+}
+
+li {
+  background-color: white;
+  border-bottom: dotted 1px ;
+  color: black;
+}
+
+
+.input-search {
+  max-width: 300px;
+  border: 1px black dotted;
+}
+.btn-search {
+  margin: 0px 100px 0px 800px ;
+
+}
+
+.search-container form {
+  padding-left: 70px ;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+} */
+

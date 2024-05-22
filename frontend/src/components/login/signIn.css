@@ -1,0 +1,62 @@
+.login-container {
+  top: 40px;
+  justify-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: #f0f0f0;
+  position: absolute;
+  border-radius:10px ;
+}
+
+.login-form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+input {
+  display: block;
+  width: 100%;  
+  margin: 10px auto; /* Thêm margin auto để căn giữa */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px; /* Thêm padding để input trông đẹp hơn */
+  box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước của input */
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Khoảng cách trên nút đăng nhập */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  margin-top: 20px;
+  color: red;
+}

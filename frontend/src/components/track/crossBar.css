@@ -1,0 +1,47 @@
+/* Crossbar.css */
+
+.crossbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #674188 ;
+  color: white;
+  padding: 10px 20px;
+  flex-direction: row ;
+}
+
+.menu-icon {
+  font-size: 14px;
+  cursor: pointer;
+}
+.menu-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  justify-items: center;
+  justify-content: center;
+  padding-left: 100px;
+}
+
+.login-button {
+  width: 100px;
+  margin-right: 50px;
+  justify-items: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button:hover {
+  background-color: white;
+  color: #3f51b5;
+}

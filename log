@@ -1,0 +1,45 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Player from './component/player/player';
+import './App.css';
+
+export default function App() {
+    const [tracks, setTracks] = useState([]);
+    const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+    useEffect(() => {
+        axios.get('http://localhost:8000/track/tracks/')
+            .then(response => {
+                setTracks(response.data);
+            })
+            .catch(error => {
+                console.error("There was an error fetching the tracks!", error);
+            });
+    }, []);
+
+    const previousTrack = () => {
+        setCurrentTrackIndex(prevIndex => (prevIndex === 0 ? tracks.length - 1 : prevIndex - 1));
+    };
+
+    const nextTrack = () => {
+        setCurrentTrackIndex(prevIndex => (prevIndex === tracks.length - 1 ? 0 : prevIndex + 1));
+    };
+
+    return (
+        <>
+        <div className="App">
+            <h1>Music Player</h1>
+            {tracks.length > 0 ? (
+                <Player
+                    track={tracks[currentTrackIndex]}
+                    currentTrackIndex={currentTrackIndex}
+                    previousTrack={previousTrack}
+                    nextTrack={nextTrack}
+                />
+            ) : (
+                <p>Loading tracks...</p>
+            )}
+        </div>
+            
+        </>
+    );
+}
