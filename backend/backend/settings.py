@@ -42,8 +42,7 @@ INSTALLED_APPS = [
     'music',
     'rest_framework',
     'corsheaders',
-    'rest_framework.authtoken',
-    
+    'rest_framework.authtoken', 
 ]
 
 REST_FRAMEWORK = {
@@ -64,7 +63,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -120,12 +118,27 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+
 AUTH_USER_MODEL = 'music_auth.Auth'
 CORS_ORIGIN_WHITELIST = (
 	'http://localhost:5173',
 )
-CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = [
+    'authorization',
+    'content-type',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
+# If you need to expose any additional headers, use CORS_EXPOSE_HEADERS
+CORS_EXPOSE_HEADERS = [
+    'content-length',
+]
+CSRF_COOKIE_HTTPONLY = False
+DATA_UPLOAD_MAX_MEMORY_SIZE = 10485760   
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

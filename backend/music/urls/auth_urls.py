@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import SimpleRouter
 from ..views import AuthView, LoginView, RegistrationView, RefreshView
+from ..views import current_user
 
 # Define a SimpleRouter instance
 router = SimpleRouter()
@@ -13,5 +14,6 @@ router.register(r'refresh', RefreshView, basename='auth-refresh')
 
 
 urlpatterns = [
-    *router.urls
+    path('current-user/', current_user, name='current_user'),
+    path('', include(router.urls)),
 ]

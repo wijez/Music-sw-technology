@@ -1,13 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import "./App.css";
+import './App.css'
 import AdminDashboard from "./components/dashboard/adminDashboard";
 import Crossbar from "./components/track/crossBar";
 import UserDashboard from "./components/dashboard/userDashboard";
 import SeekBar from "./components/seekBar";
 import SearchBar from "./components/searchBar/searchBar";
 import LoginForm from "./components/login/loginForm";
+import SignUp from "./components/login/signup";
 
 export default function App() {
   const [tracks, setTracks] = useState([]);
@@ -49,11 +50,12 @@ export default function App() {
 
   return (
     <Router>
-      <Crossbar/>
-      <SearchBar/>
+      <Crossbar />
+      <SearchBar />
       <div className="App">
         <Routes>
-          <Route path="/login" element={<LoginForm/>}/>
+          <Route path="/register" element={<SignUp />} />
+          <Route path="/login" element={<LoginForm />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route
             path="/"
@@ -70,10 +72,25 @@ export default function App() {
       </div>
       <SeekBar
         track={tracks[currentTrackIndex]}
-        randomTrack = {randomTrack}
+        randomTrack={randomTrack}
         previousTrack={previousTrack}
         nextTrack={nextTrack}
       />
     </Router>
   );
 }
+
+// import React from "react";
+// import Home from "./screens/home";
+// import "./App.css";
+
+
+// export default function App() {
+//   return (
+//     <>
+//       <div>
+//         <Home />
+//       </div>
+//     </>
+//   );
+// }

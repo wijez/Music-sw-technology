@@ -1,5 +1,3 @@
-/* Crossbar.css */
-
 .crossbar {
   display: flex;
   align-items: center;
@@ -19,17 +17,9 @@
   height: 30px;
 }
 
-.title {
-  font-size: 24px;
-  font-weight: bold;
-  justify-items: center;
-  justify-content: center;
-  padding-left: 100px;
-}
-
 .login-button {
   width: 100px;
-  margin-right: 50px;
+  margin-right: 20px;
   justify-items: center;
   align-items: center;
   background-color: transparent;
@@ -44,4 +34,28 @@
 .login-button:hover {
   background-color: white;
   color: #3f51b5;
+}
+
+.register-button {
+  width: 100px;
+  margin-right: 100px;
+  justify-items: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.register-button:hover {
+  background-color: white;
+  color: #3f51b5;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
 }

@@ -25,6 +25,7 @@ urlpatterns = [
     path('track/', include('music.urls.track_urls')),
     path('auth/', include('music.urls.auth_urls')),
     path('', include('music.urls.favorite_urls')),
+    path('csfr/',include('music.urls.csfr_urls'))
     # path('user/', include('music.urls.auth_urls'))
 ]
 

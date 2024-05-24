@@ -1,5 +1,7 @@
 .admin-dashboard {
-  width: max-content;
+  overflow-y: scroll;
+  max-width: 400px;
+  max-height: 400px;
   padding: 20px;
   text-align: center;
 }
@@ -20,4 +22,11 @@
   margin: 10px 0;
   display: flex;
   justify-content: space-between;
+}
+.admin-dashboard h1{
+  top: 0;
+}
+
+.title-new-track{
+  top: 0;
 }

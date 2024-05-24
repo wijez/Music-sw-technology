@@ -1,4 +1,4 @@
-/* form {
+/* .form-search {
   background-color: #FFFBF5;
   display: flex;
 }
@@ -23,20 +23,180 @@ li {
 }
 
 
-.input-search {
+..input-search-search {
   max-width: 300px;
   border: 1px black dotted;
 }
 .btn-search {
-  margin: 0px 100px 0px 800px ;
-
+    width: 100px;
 }
 
-.search-container form {
-  padding-left: 70px ;
-  display: flex;
+.search-container .form-search {
   flex-direction: row;
+  row-gap: 30px;
+  padding-left: 70px ;
   justify-items: center;
   align-items: center;
 } */
 
+.search-container, button, .input-search {
+	font: 1em Hind, sans-serif;
+	line-height: 1.5em;
+}
+.search-container, .input-search {
+	color: white;
+}
+.search-container, .form-search {
+	display: flex;
+}
+.search-container {
+	background: #f1f1f1;
+	height: 100px;
+}
+
+.form-search .input-search,
+.btn-search, 
+.btn-search:before, 
+.btn-search:after {
+	transition: all 0.25s ease-out;
+}
+.form-search .input-search,
+.btn-search {
+	width: 3em;
+}
+.form-search .input-search:invalid:not(:focus),
+.btn-search {
+	cursor: pointer;
+}
+.form-search,
+.form-search .input-search:focus,
+.form-search .input-search:valid  {
+	width: 100%;
+}
+.form-search .input-search:focus,
+.form-search .input-search:not(:focus) + .btn-search:focus {
+	outline: transparent;
+}
+.form-search {
+	margin: auto;
+	padding: 1.5em;
+	justify-content: center;
+	max-width: 30em;
+}
+.form-search .input-search {
+	background: transparent;
+	border-radius: 1.5em;
+	box-shadow: 0 0 0 0.4em #171717 inset;
+	transform: translate(0.5em,0.5em) scale(0.5);
+	transform-origin: 100% 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.form-search .input-search::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+.form-search .input-search:focus,
+.form-search .input-search:valid {
+	background: #fff;
+	border-radius: 0.375em 0 0 0.375em;
+	box-shadow: 0 0 0 0.1em #d9d9d9 inset;
+	transform: scale(1);
+}
+.btn-search {
+	background: #171717;
+	border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
+	padding: 0.75em;
+	position: relative;
+	transform: translate(0.25em,0.25em) rotate(45deg) scale(0.25,0.125);
+	transform-origin: 0 50%;
+}
+.btn-search:before, 
+.btn-search:after {
+	content: "";
+	display: block;
+	opacity: 0;
+	position: absolute;
+}
+.btn-search:before {
+	border-radius: 50%;
+	box-shadow: 0 0 0 0.2em #f1f1f1 inset;
+	top: 0.75em;
+	left: 0.75em;
+	width: 1.2em;
+	height: 1.2em;
+}
+.btn-search:after {
+	background: #f1f1f1;
+	border-radius: 0 0.25em 0.25em 0;
+	top: 51%;
+	left: 51%;
+	width: 0.75em;
+	height: 0.25em;
+	transform: translate(0.2em,0) rotate(45deg);
+	transform-origin: 0 50%;
+}
+.btn-search span {
+	display: inline-block;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+}
+
+/* Active state */
+.form-search .input-search:focus + .btn-search,
+.form-search .input-search:valid + .btn-search {
+	background: #2762f3;
+	border-radius: 0 0.375em 0.375em 0;
+	transform: scale(1);
+}
+.form-search .input-search:focus + .btn-search:before, 
+.form-search .input-search:focus + .btn-search:after,
+.form-search .input-search:valid + .btn-search:before, 
+.form-search .input-search:valid + .btn-search:after {
+	opacity: 1;
+}
+.form-search .input-search:focus + .btn-search:hover,
+.form-search .input-search:valid + .btn-search:hover,
+.form-search .input-search:valid:not(:focus) + .btn-search:focus {
+	background: #0c48db;
+}
+.form-search .input-search:focus + .btn-search:active,
+.form-search .input-search:valid + .btn-search:active {
+	transform: translateY(1px);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	.search-container, .input-search {
+		color: #f1f1f1;
+	}
+	.search-container {
+		background: #FFFBF5;
+	}
+	.form-search .input-search {
+		box-shadow: 0 0 0 0.4em #f1f1f1 inset;
+	}
+	.form-search .input-search:focus,
+	.form-search .input-search:valid {
+		background: #FFFBF5;
+		box-shadow: 0 0 0 0.1em #3d3d3d inset;
+	}
+	.btn-search {
+		background: #f1f1f1;
+	}
+}
+
+
+ul {
+  position: absolute ;
+  margin: 20px; 
+  padding: 10px;
+  list-style-type: none; 
+  border: none; 
+}
+
+li {
+  background-color: white;
+  border-bottom: dotted 1px ;
+  color: black;
+}

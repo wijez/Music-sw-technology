@@ -1,5 +1,13 @@
 .track-management {
+  max-width: 800px;
+  margin: 0 auto;
   padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.track-management h2, .track-management h3 {
+  text-align: center;
+  color: #333;
 }
 
 .track-management ul {
@@ -8,29 +16,99 @@
 }
 
 .track-management li {
-  margin: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #f9f9f9;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 .track-management button {
-  margin-left: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 5px;
 }
 
-.track-management form {
+.track-management button:hover {
+  background-color: #0056b3;
+}
+
+.track-management .form-admin-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
   margin-top: 20px;
+}
+
+.track-management .form-admin-track .form-to-track,
+.track-management .form-admin-track select {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 5px 0;
+}
+
+.track-management .form-admin-track label {
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
+.track-management .form-admin-track button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.track-management .form-admin-track button:hover {
+  background-color: #218838;
+}
+
+.track-crud-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.track-management {
+  top: 0;
   display: flex;
   flex-direction: column;
 }
 
-.track-management form input {
-  margin-bottom: 10px;
-  padding: 8px;
-  font-size: 16px;
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
 }
 
-.track-management form button {
-  padding: 10px;
-  font-size: 16px;
+.list-track {
+  right: 0;
+  top: 70px;
+  overflow-y: scroll;
+  max-height: 600px;
+}
+
+.list-track li {
+  flex-direction: column;
+}
+
+.btn-track {
+  flex-direction: row;
 }

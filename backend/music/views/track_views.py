@@ -1,5 +1,5 @@
 # music/views.py
-from rest_framework import generics
+from rest_framework import generics, status
 from ..models import Track
 from ..serializers import TrackSerializer
 from django.http import JsonResponse
@@ -15,8 +15,16 @@ class TrackDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Track.objects.all()
     serializer_class = TrackSerializer
 
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+    
+    def delete(self, request, *args, **kwargs):
+        instance = self.get_object()
+        self.perform_destroy(instance)
+        return Response(status=status.HTTP_204_NO_CONTENT)
 # views.py
 
+@api_view(['GET'])
 def get_tracks(request):
     tracks = Track.objects.all()
     track_list = [{
@@ -42,3 +50,15 @@ def search_tracks(request):
         tracks = Track.objects.all()
     serializer = TrackSerializer(tracks, many=True)
     return Response(serializer.data)
+
+# class TrackUpdate(generics.UpdateAPIView):
+#     queryset = Track.objects.all()
+#     serializer_class = TrackSerializer
+    
+
+
+
+# class TrackDelete(generics.DestroyAPIView):
+#     queryset = Track.objects.all()
+#     serializer_class = TrackSerializer
+

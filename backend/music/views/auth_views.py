@@ -12,7 +12,8 @@ from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.exceptions import TokenError, InvalidToken
 from ..serializers import LoginSerializer, RegisterSerializer
-
+from rest_framework.decorators import api_view
+from django.contrib.auth import get_user_model
 
 class AuthView(viewsets.ModelViewSet):
     http_method_names = ['get']
@@ -88,3 +89,13 @@ class RefreshView(viewsets.ViewSet, TokenRefreshView):
 
         return Response(serializer.validated_data, status=status.HTTP_200_OK)
 
+
+Auth = get_user_model()
+@api_view(['GET'])
+def current_user(request):
+    user = request.user
+    if user.is_authenticated:
+        serializer = AuthSerializer(user)
+        return Response(serializer.data)
+    else:
+        return Response({})
