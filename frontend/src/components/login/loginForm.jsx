@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import authService from "../../services/userService";
-import {checkSuperuser} from '../authform/authSuperuser.jsx'
+import { checkSuperuser } from "../authform/authSuperuser.jsx";
 import "./loginForm.css";
 const LoginForm = ({ onLoginSuccess }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -26,11 +26,10 @@ const LoginForm = ({ onLoginSuccess }) => {
         formData.password
       );
       console.log("Login successful:", response);
-      // Redirect or update UI
-      if (checkSuperuser()) { 
-        navigate("/admin"); 
+      if (checkSuperuser() === true) {
+        navigate("/admin");
       } else {
-        navigate("/"); 
+        navigate("/");
       }
     } catch (error) {
       console.error("Login failed:", error.message);

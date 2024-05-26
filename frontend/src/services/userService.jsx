@@ -1,5 +1,20 @@
 import axios from 'axios';
+import { getCsrfToken } from './csrf';
 
+
+const getConfigWithCsrfToken = async () => {
+    const csrfToken = await getCsrfToken();
+    return {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        "X-Requested-With": "XMLHttpRequest",
+        "X-CSRFToken": csrfToken,
+      },
+      withCredentials: true,
+    };
+  };
+
+  
 const apiService = axios.create({
     baseURL: 'http://localhost:8000/auth/',
     headers: {
@@ -11,11 +26,12 @@ const apiService = axios.create({
 const authService = {
     register: async (username, email, password) => {
         try {
+            const config = await getConfigWithCsrfToken();
             const response = await apiService.post('register/', {
                 username,
                 email,
                 password,
-            });
+            }, config);
             if (response.data.token) {
                 localStorage.setItem('token', response.data.token);
             }
@@ -27,10 +43,11 @@ const authService = {
     },
     login: async ( email, password) => {
         try {
+            const config = await getConfigWithCsrfToken();
             const response = await apiService.post('login/', {
                 email,
                 password,
-            });
+            }, config);
             if (response.data.token) {
                 localStorage.setItem('token', response.data.token);
             }

@@ -14,6 +14,6 @@ router.register(r'refresh', RefreshView, basename='auth-refresh')
 
 
 urlpatterns = [
-    path('current-user/', current_user, name='current_user'),
+    path(r'current-user/', current_user, name='current_user'),
     path('', include(router.urls)),
 ]
