@@ -1,9 +1,11 @@
 .user-dashboard {
+  margin-top: 80px;
   padding: 20px;
   text-align: center;
 }
 
 .song-list {
+  margin-top: 60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

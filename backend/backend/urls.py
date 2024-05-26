@@ -24,9 +24,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('track/', include('music.urls.track_urls')),
     path('auth/', include('music.urls.auth_urls')),
-    path('', include('music.urls.favorite_urls')),
-    path('csfr/',include('music.urls.csfr_urls'))
-    # path('user/', include('music.urls.auth_urls'))
+    path('favorites/', include('music.urls.favorite_urls')),
+    path('csfr/',include('music.urls.csfr_urls')),
+    path('cart/', include('music.urls.cart_urls'), name='add_to_cart'),
 ]
 
 if settings.DEBUG:

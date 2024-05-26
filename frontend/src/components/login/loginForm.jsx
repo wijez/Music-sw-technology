@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import authService from "../../services/userService";
-import { checkSuperuser } from "../authform/authSuperuser.jsx";
 import "./loginForm.css";
-const LoginForm = ({ onLoginSuccess }) => {
+import {UserContext} from "../authform/userContext";
+
+const LoginForm = ({ onLoginSuccess  }) => {
+  //const { login } = useContext(UserContext);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -21,24 +23,27 @@ const LoginForm = ({ onLoginSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await authService.login(
+      const userData = await authService.login(
         formData.email,
         formData.password
       );
-      console.log("Login successful:", response);
-      if (checkSuperuser() === true) {
+      console.log("Login successful:", userData.user);
+      //login(userData.user); // Lưu trữ thông tin người dùng trong ngữ cảnh
+      onLoginSuccess(userData.user)
+      if (userData.user.is_superuser) {
         navigate("/admin");
       } else {
         navigate("/");
       }
     } catch (error) {
-      console.error("Login failed:", error.message);
+      console.error("Login failed:", error.response ? error.response.data : error.message);
     }
   };
 
   if (isSubmitted) {
     return null;
   }
+
   return (
     <>
       <div className="container-login">

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+
 import "./searchBar.css";
 
 export default function SearchBar() {
@@ -32,10 +33,10 @@ export default function SearchBar() {
           <span>Search</span>
         </button>
       </form>
-      <ul>
+      <ul className="title_filter">
         {results.map((track) => (
           <li key={track.title}>
-            {track.artist}: {track.album}: {track.title}
+            {track.artist}: {track.album}: {track.title} : {track.genre}
           </li>
         ))}
       </ul>

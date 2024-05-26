@@ -4,4 +4,5 @@ from ..models import Favorite
 class FavoriteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Favorite
-        fields = '__all__'
+        fields = ['id', 'user_id', 'track_id']
+  

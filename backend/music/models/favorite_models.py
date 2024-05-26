@@ -7,4 +7,5 @@ class Favorite(models.Model):
                                on_delete=models.CASCADE,
                                related_name='favorites')
   track_id = models.ForeignKey('Track', related_name='track', on_delete=models.CASCADE)
-  
+  class Meta:
+    unique_together = ['user_id', 'track_id']

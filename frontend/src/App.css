@@ -1,14 +1,14 @@
-/* src/App.css */
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Dùng justify-content: center để căn giữa nội dung */
+  justify-content: center; 
   background-color: #FFFBF5;
   padding: 20px;
-  height: 100vh; /* Thiết lập chiều cao bằng 100% của viewport height */
-  width: 100vw; /* Thiết lập chiều rộng bằng 100% của viewport width */
+  height: 100vh; 
+  width: 100vw; 
   color: gray;
+  
 }
 h1 {
   font-size: 2.5em;

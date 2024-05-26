@@ -1,114 +1,74 @@
+/* trackManagement.css */
+
 .track-management {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.track-management h2, .track-management h3 {
-  text-align: center;
-  color: #333;
-}
-
-.track-management ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.track-management li {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background: #f9f9f9;
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.track-management button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-left: 5px;
-}
-
-.track-management button:hover {
-  background-color: #0056b3;
-}
-
-.track-management .form-admin-track {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  background: #f9f9f9;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
   margin-top: 20px;
 }
 
-.track-management .form-admin-track .form-to-track,
-.track-management .form-admin-track select {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin: 5px 0;
+.list {
+  flex: 1;
+
+  max-width: 40px;
+  max-height: 40px;
 }
 
-.track-management .form-admin-track label {
-  width: 100%;
-  max-width: 400px;
-  text-align: left;
-}
-
-.track-management .form-admin-track button {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-top: 10px;
-}
-
-.track-management .form-admin-track button:hover {
-  background-color: #218838;
-}
-
-.track-crud-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.track-management {
-  top: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.admin-dashboard {
-  display: flex;
-  flex-direction: column;
+.add {
+  flex: 1;
+  margin-left: 20px;
 }
 
 .list-track {
-  right: 0;
-  top: 70px;
-  overflow-y: scroll;
-  max-height: 600px;
+  list-style: none;
+  padding: 0;
 }
 
 .list-track li {
+  margin-bottom: 5px;
+  padding: 3px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
   flex-direction: column;
 }
 
-.btn-track {
-  flex-direction: row;
+.btn-track button {
+  margin-right: 10px;
 }
+
+.title-new-track {
+  margin-bottom: 10px;
+}
+
+.form-admin-track {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-to-track {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-to-track[type="file"] {
+  padding: 0;
+}
+
+.form-to-track[type="file"]:hover {
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+

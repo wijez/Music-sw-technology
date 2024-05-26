@@ -1,61 +1,99 @@
 .crossbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: #674188 ;
-  color: white;
+  align-items: center;
   padding: 10px 20px;
-  flex-direction: row ;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
 }
 
-.menu-icon {
-  font-size: 14px;
-  cursor: pointer;
-}
+
 .menu-icon img {
-  width: 30px;
-  height: 30px;
-}
-
-.login-button {
-  width: 100px;
-  margin-right: 20px;
-  justify-items: center;
-  align-items: center;
-  background-color: transparent;
-  border: 1px solid white;
-  color: white;
-  padding: 8px 16px;
+  width: 50px;
+  height: auto;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.login-button:hover {
-  background-color: white;
-  color: #3f51b5;
-}
-
-.register-button {
-  width: 100px;
-  margin-right: 100px;
-  justify-items: center;
-  align-items: center;
-  background-color: transparent;
-  border: 1px solid white;
-  color: white;
-  padding: 8px 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.register-button:hover {
-  background-color: white;
-  color: #3f51b5;
 }
 
 .btn {
+  margin-right: 30px;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+}
+
+.user-name {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-button,
+.register-button,
+.logout-button, .cart-button, .sum-button,
+.info-button{
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover,
+.register-button:hover,
+.logout-button:hover,
+.cart-button:hover,
+.sum-button:hover,
+.info-button:hover {
+  background-color: #f2f2f2;
+  color: #555;
+}
+
+.login-button,
+.register-button,
+.cart-button,
+.sum-button,.info-button {
+  margin-right: 10px;
+}
+
+.logout-button {
+  margin-left: auto;
+}
+
+
+
+.cart-button,
+.sum-button {
+  cursor: pointer;
+}
+
+.cart-item-count {
+  background-color: #ff4d4d;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 12px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+
+user-info-container {
+  display: flex;
+  align-items: center;
+  position: relative; 
+}
+
+.info-button {
+
+  color: #333;
+  font-size: 24px; 
+  cursor: pointer;
+  margin-right: 10px; 
 }

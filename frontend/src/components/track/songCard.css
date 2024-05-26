@@ -1,8 +1,55 @@
+body {
+  background-color: #fffbf5;
+}
 .song-card {
-  cursor: pointer;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
-.song-card .cover-image {
+.song-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cover-image {
+  width: 100px;
   height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 12px;
+}
+
+.song-info {
+  flex: 1;
+}
+
+.song-info h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.song-info p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.add-to-cart-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #2980b9;
 }

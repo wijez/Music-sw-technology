@@ -1,0 +1,37 @@
+.song-info-card {
+  position: fixed;
+  margin-bottom: 200px;
+  height: 700px;
+  margin-left: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cover-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.song-info-info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.song-info-info label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.song-info-info label span {
+  font-weight: normal;
+}

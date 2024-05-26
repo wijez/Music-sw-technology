@@ -18,7 +18,6 @@ export default function TrackManagement() {
     audio_file: null,
     image: null,
     favorites: "",
-   
   });
   const [editingTrack, setEditingTrack] = useState(null);
 
@@ -66,7 +65,7 @@ export default function TrackManagement() {
       .then((response) => {
         fetchTracks();
         setNewTrack({
-          title: "",  
+          title: "",
           artist: "",
           album: "",
           release: "",
@@ -74,7 +73,6 @@ export default function TrackManagement() {
           audio_file: null,
           image: null,
           favorites: "",
-        
         });
         setEditingTrack(null);
         console.log(
@@ -97,28 +95,33 @@ export default function TrackManagement() {
   const handleEdit = (track) => {
     setNewTrack({
       ...track,
-      audio_file: null, // Reset file input className="form-to-track"
-      image: null, // Reset file input className="form-to-track"
+      audio_file: null,
+      image: null,
     });
     setEditingTrack(track);
   };
 
   return (
     <div className="track-management">
-      <ul className="list-track">
+      <div className="list">
+        <ul className="list-track">
         {tracks.map((track) => (
           <li key={track.id}>
             {track.title} - {track.artist}
             <p>Created at: {track.created_at}</p>
             <p>Last updated at: {track.updated_at}</p>
-            <div className='btn-track'>
-            <button onClick={() => handleEdit(track)}>Edit</button>
-            <button onClick={() => handleDelete(track.id)}>Delete</button>
+            <div className="btn-track">
+              <button onClick={() => handleEdit(track)}>Edit</button>
+              <button onClick={() => handleDelete(track.id)}>Delete</button>
             </div>
           </li>
         ))}
       </ul>
-      <h3 className="title-new-track">{editingTrack ? "Edit Track" : "Add New Track"}</h3>
+      </div>
+      <div className="add">
+      <h3 className="title-new-track">
+        {editingTrack ? "Edit Track" : "Add New Track"}
+      </h3>
       <form className="form-admin-track" onSubmit={handleSubmit}>
         <input
           className="form-to-track"
@@ -178,7 +181,7 @@ export default function TrackManagement() {
             type="file"
             name="audio_file"
             onChange={handleChange}
-            required={!editingTrack} // Only required for new tracks
+            required={!editingTrack} 
           />
         </label>
         <label>
@@ -198,11 +201,12 @@ export default function TrackManagement() {
           value={newTrack.favorites}
           onChange={handleChange}
         />
-        
+
         <button type="submit">
           {editingTrack ? "Update Track" : "Add Track"}
         </button>
       </form>
+      </div>
     </div>
   );
 }

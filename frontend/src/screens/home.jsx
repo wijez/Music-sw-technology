@@ -1,10 +1,3 @@
-// import React from 'react'
-
-// export default function Home() {
-//   return (
-//     <div>Home</div>
-//   )
-// }
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
@@ -55,7 +48,6 @@ export default function Home() {
     setCurrentTrackIndex(randomIndex);
   };
 
-  
   return (
     <Router>
       <Crossbar />

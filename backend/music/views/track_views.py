@@ -44,7 +44,8 @@ def search_tracks(request):
         tracks = Track.objects.filter(
             Q(title__icontains=query) |
             Q(artist__icontains=query) |
-            Q(album__icontains=query)
+            Q(album__icontains=query)  |
+            Q(genre__icontains=query)
         )
     else:
         tracks = Track.objects.all()
