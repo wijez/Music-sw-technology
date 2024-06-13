@@ -1,0 +1,33 @@
+
+.user-container {
+  position: relative;
+  display: inline-block;
+}
+
+.user-icon {
+  cursor: pointer;
+  font-size: 24px; 
+  color: #4CAF50; 
+}
+
+.user-info {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  padding: 20px; 
+  width: 300px; 
+  margin-top: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  font-family: Arial, sans-serif; 
+}
+
+.user-info label {
+  display: block; 
+  margin: 8px 0; 
+  color: #333; 
+  font-weight: normal; 
+}
+
+.user-info label strong {
+  color: #000; 
+}

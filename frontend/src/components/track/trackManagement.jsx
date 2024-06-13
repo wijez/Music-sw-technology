@@ -106,10 +106,10 @@ export default function TrackManagement() {
       <div className="list">
         <ul className="list-track">
         {tracks.map((track) => (
-          <li key={track.id}>
+          <li className="track-manage-li" key={track.id}>
             {track.title} - {track.artist}
-            <p>Created at: {track.created_at}</p>
-            <p>Last updated at: {track.updated_at}</p>
+            <p className="track-manage-p">Created at: {track.created_at}</p>
+            <p className="track-manage-p">Last updated at: {track.updated_at}</p>
             <div className="btn-track">
               <button onClick={() => handleEdit(track)}>Edit</button>
               <button onClick={() => handleDelete(track.id)}>Delete</button>

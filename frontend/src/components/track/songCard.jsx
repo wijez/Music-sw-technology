@@ -18,6 +18,7 @@ export default function SongCard({ track, index, handleCardClick, addToCart}) {
         <div className="song-info">
           <h2>{track.title}</h2>
           <p>{track.artist}</p>
+          <p>{track.money}</p>
         </div>
         <button className="add-to-cart-button" onClick={() => addToCart(track)}>
             Add to Cart

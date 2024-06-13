@@ -33,6 +33,10 @@
   font-weight: bold;
 }
 
+.btn-search:hover {
+  background-color: red;
+}
+
 .title_filter {
   list-style-type: none;
   margin: 0;

@@ -40,8 +40,9 @@
   align-items: center;
   background-color: white;
   display: flex;
+  align-self: end;
   justify-content: center;
-  height: 100vh;
+  height: 30vh;
   border-radius: 20px;
   box-shadow:1px #15172b; 
 }

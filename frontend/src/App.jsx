@@ -50,6 +50,7 @@ export default function App() {
     localStorage.setItem("user", JSON.stringify(user));
   };
 
+
   useEffect(() => {
     axios
       .get("http://localhost:8000/track/tracks/")
@@ -111,7 +112,7 @@ export default function App() {
               }
             />
             <Route path="/parent" element={<Parent/>}/>
-            <Route path="/register" element={<SignUp />} />
+            <Route path="/register" element={<SignUp   />} />
             <Route
               path="/admin"
               element={

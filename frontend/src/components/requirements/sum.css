@@ -1,0 +1,53 @@
+/* sum.css */
+
+.sum-button {
+  cursor: pointer;
+  color: blue;
+}
+
+.sum-container {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* .sum-container h2 {
+  color: #333;
+} */
+
+/* .sum-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sum-container li {
+  margin-bottom: 5px;
+} */
+
+.sum-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.sum-container li {
+  z-index: 1;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #f2f2f2;
+}
+

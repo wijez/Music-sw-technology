@@ -8,6 +8,7 @@ const LoginForm = ({ onLoginSuccess  }) => {
   //const { login } = useContext(UserContext);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -36,6 +37,8 @@ const LoginForm = ({ onLoginSuccess  }) => {
         navigate("/");
       }
     } catch (error) {
+      setErrorMessage(error.response.data.message);
+      setErrorMessage("Login failed. Please try again later.");
       console.error("Login failed:", error.response ? error.response.data : error.message);
     }
   };
@@ -78,7 +81,7 @@ const LoginForm = ({ onLoginSuccess  }) => {
             <div className="cut cut-short"></div>
             <label className="placeholder">Password</label>
           </div>
-
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           <button type="submit" className="btn-login">
             Log In
           </button>

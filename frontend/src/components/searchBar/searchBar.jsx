@@ -6,7 +6,7 @@ import "./searchBar.css";
 export default function SearchBar() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-
+  
   const handleSearch = async (e) => {
     e.preventDefault();
     try {

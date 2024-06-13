@@ -13,12 +13,12 @@
   text-align: left;
 }
 
-.song-management ul {
+.song-management .list-track {
   list-style-type: none;
   padding: 0;
 }
 
-.song-management li {
+.song-management .track-manage-li {
   margin: 10px 0;
   display: flex;
   justify-content: space-between;

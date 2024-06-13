@@ -10,14 +10,14 @@ export default function SignUp() {
     email: "",
     password: "",
   });
-
+  const [errorMessage, setErrorMessage] = useState("");
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -26,10 +26,17 @@ export default function SignUp() {
         formData.email,
         formData.password
       );
+      
+        navigate("/");
+    
+     
+      
       console.log("Register:", response);
-      navigate("/");
     } catch (error) {
-      console.error("Register failed:", error.message);
+      if (error.response && error.response.data) {
+        setErrorMessage(error.response.data.message);
+        setErrorMessage("Registration failed. Please try again later.");
+      }
     }
   };
 
@@ -84,7 +91,7 @@ export default function SignUp() {
             <div className="cut cut-short"></div>
             <label className="placeholder">Password</label>
           </div>
-
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           <button type="submit" className="btn-signup">
             Register
           </button>

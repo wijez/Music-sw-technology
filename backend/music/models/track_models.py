@@ -8,6 +8,7 @@ class Track(models.Model):
     artist = models.CharField(max_length=100)
     album = models.CharField(max_length=100, blank=True)
     release = models.DateField()
+    money = models.IntegerField()
     genre = models.CharField(max_length=50, choices=GenreEnum.choices())
     audio_file = models.FileField(upload_to='tracks/')
     image = models.ImageField(upload_to='images/')

@@ -2,8 +2,9 @@
   align-items: center;
   background-color: white;
   display: flex;
+  align-self: end;
   justify-content: center;
-  height: 100vh;
+  height: 30vh;
   border-radius: 20px;
   box-shadow:1px #15172b; 
 }
@@ -14,9 +15,12 @@
   background-color: white;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 500px;
-  padding: 20px;
+  height: 400px;
+  padding: 40px;
+  margin:2px 35px;
   width: 320px;
+  justify-content: center;
+  font-size: small;
 }
 
 .title {
@@ -137,4 +141,12 @@
 .form .logo {
 	align-self: center;
 	
+}
+.error-message {
+  z-index: 1000;
+  color: red;
+  font-weight: 800;
+  width: 100px;
+  height: 100px;
+  display: flex;;
 }
